@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Il Mio Sito Express</title>
+    <title><%= title %></title>
 </head>
 <body>
-    <h1>Benvenuto nel mio sito Express!</h1>
-    <p>Questo è il mio primo template EJS</p>
+    <h1><%= title %></h1>
     
-    <nav>
-        <a href="/">Home</a> |
-        <a href="/authors">Autori</a> |
-        <a href="/books">Libri</a>
-    </nav>
+    <a href="/new">Scrivi nuovo messaggio</a>
+    
+    <div>
+        <% messages.forEach((message) => { %>
+            <div style="border: 1px solid #ccc; margin: 10px; padding: 10px;">
+                <strong><%= message.user %></strong>
+                <p><%= message.text %></p>
+                <small><%= message.added.toLocaleString() %></small>
+            </div>
+        <% }); %>
+    </div>
 </body>
 </html>

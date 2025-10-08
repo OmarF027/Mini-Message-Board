@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    
+    <form method="POST" action="/new">
+        <div>
+            <label>Nome:</label>
+            <input type="text" name="messageUser" required>
+        </div>
+        
+        <div>
+            <label>Messaggio:</label>
+            <textarea name="messageText" required></textarea>
+        </div>
+        
+        <button type="submit">Invia</button>
+    </form>
+    
+    <a href="/">← Torna alla home</a>
+</body>
+</html>
